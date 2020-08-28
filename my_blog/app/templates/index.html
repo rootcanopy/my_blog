@@ -1,6 +1,9 @@
 {% extends "base.html" %}
 
 {% block content %}
+
+<section class="container">
+
     <h1> Hell0, {{ user.username }}! </h1>
 
     {% for post in posts %}
@@ -8,4 +11,7 @@
             <p>{{ post.author.username }} says: <b> {{ post.body }} </b></p>
         </div> 
     {% endfor %}
+    
+</section>
+
 {% endblock %}
