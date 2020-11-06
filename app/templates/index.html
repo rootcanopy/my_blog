@@ -4,11 +4,11 @@
 
 <section class="container">
 
-    <h1> Hell0, {{ user.username }}! </h1>
+    <h1> Hello, {{ current_user.username }}! </h1>
 
     {% for post in posts %}
         <div>
-            <p>{{ post.author.username }} says: <b> {{ post.body }} </b></p>
+            <p><b>{{ post.author.username }} says:</b> {{ post.body }} </p>
         </div> 
     {% endfor %}
     

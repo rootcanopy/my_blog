@@ -12,6 +12,7 @@ db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 login = LoginManager(app)
 
+debug=True
 
 #LEFT AT BOTTOM TO PROHIBIT CIRCULAR DEPENDENCIES
 from app import routes, models
