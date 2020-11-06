@@ -1,3 +1,4 @@
+import os
 from flask import Flask
 from config import Config
 from flask_sqlalchemy import SQLAlchemy
@@ -12,8 +13,5 @@ db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 login = LoginManager(app)
 
-if __name__ == '__main__':
-    app.run(debug=True)
 
-#LEFT AT BOTTOM TO PROHIBIT CIRCULAR DEPENDENCIES
-from app import routes, models
+from app import routes, models, errors

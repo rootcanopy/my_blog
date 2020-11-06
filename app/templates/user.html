@@ -5,7 +5,7 @@
 
     <table>
         <tr valign="top">
-            <td><img src="{{ user.avatar(128) }}"></td>
+            <td><img src="{{ user.avatar(125) }}"></td>
             <td class="ml-3">
                 <h1>User: {{ user.username }} </h1>
                 {% if user.about_me %} <p> {{ user.about_me }} </p> {% endif %}
@@ -13,18 +13,19 @@
             </td>
         </tr>
     </table>
+    
+    {% if user == current_user %}
+        <p class="editLink mt-5">
+            <a href="{{ url_for('edit_profile') }}">
+                Edit your profile
+            </a>
+        </p>
+    {% endif %}
     <hr>
 
     {% for post in posts %}
         {% include '_post.html' %}
     {% endfor %}
-
-    {% if user == current_user %}
-        <p class="editProfileBox mt-5">
-            <a href="{{ url_for('edit_profile') }}">Edit your profile</a>
-        </p>
-    {% endif %}
-
 
 </section>
 {% endblock %}
